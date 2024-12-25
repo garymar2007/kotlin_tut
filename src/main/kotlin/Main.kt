@@ -1,5 +1,7 @@
 package org.gary
 
+const val PI = 3.14 // This is similar to static final double PI = 3.14 in Java
+val pi = getPiValue()
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
@@ -13,4 +15,21 @@ fun main() {
         // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
         println("i = $i")
     }
+
+    //safe call operator
+    var a: String? = "Kotlin"
+    a = null
+    println(a?.length)
+
+    // using string template for concatenation
+    val who = "Gary"
+    val language = "Kotlin"
+    val message = "$who loves $language"
+    println(message)
+
+
 }
+
+fun getConstPiValue(): Double = PI
+
+fun getPiValue(): Double = 3.14
