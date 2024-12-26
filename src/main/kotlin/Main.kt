@@ -1,5 +1,10 @@
 package org.gary
 
+import kotlin.math.max
+import kotlin.math.min
+import kotlin.math.round
+import kotlin.math.sqrt
+
 const val PI = 3.14 // This is similar to static final double PI = 3.14 in Java
 val pi = getPiValue()
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -45,6 +50,15 @@ fun main() {
     val str4 = String("Kotlin".toCharArray())
     println(str1 == str4)  //  "==" can be used here because str4 is a Kotlin String.
     println(str4 === str1) //  "===" is used to compare memory reference of the objects.
+
+    // using Math libs
+    println(kotlin.math.PI) //3.141592653589793
+    println(max(1, 2)) //2
+    println(min(1,2))   //1
+    println(round(sqrt(26.0)))
+
+    //
+
 
 
     //1:20:27
