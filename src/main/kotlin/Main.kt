@@ -216,8 +216,30 @@ fun main() {
         print(" ")
     }
 
-    //
+    // loop in String
+    val brand = "amazon"
+    for (l in brand) {
+        println(l)
+    }
 
+    // foreach
+    val strs = arrayOf("Kotlin", "Java", "Python")
+    strs.forEach {
+        println(it)
+    }
+
+    //while/do-while loop
+    var number = 1
+    while (number <= 5) {
+        print(number)
+        print(" ")
+        number++
+    }
+    do {
+        print(number)
+        print(" ")
+        number--
+    } while (number >= 0)
 
     //3:07:49
 
