@@ -280,6 +280,13 @@ fun main() {
 
     // return value from a function
     println(double(3)) //6
+    println(triple(3)) //9
+
+    // return multiple values from a function
+    val (v1, v2) = twoValues()
+    val (t1, t2, t3) = tripleValues()
+    println("$v1 - $v2") //Gary - 20
+    println("$t1 - $t2 - $t3") //Gary - 20 - M
 
 
 
@@ -289,9 +296,18 @@ fun main() {
 
 }
 
+fun twoValues(): Pair<String, Int> = "Gary" to 20
+
+fun tripleValues(): Triple<String, Int, Char> = Triple(
+        "Gary", 20, 'M'
+    )
+
+
 fun double(x: Int): Int {
     return x * 2
 }
+
+fun triple(x: Int): Int = x * 3
 
 fun foo(bar: () -> Unit) {
     println("bar function")
