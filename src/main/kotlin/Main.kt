@@ -90,9 +90,86 @@ fun main() {
     //Ternary operator
     // In Java, var result = n1 > n2 ? n1 : n2;
     // In kotlin
-    val n1 = 31
+    val n1 = 20
     val n2 = 20
-    val result = if (n1 > n2) n1 else n2
+    val result =
+        if (n1 > n2) n1
+        else if (n1 == n2) "equal"
+        else n2
+    print(result) //31
+
+    // when statement
+    // In java, swith statement is used, but in Kotlin, we use when statement
+    val age = 20
+    when (age) {
+        0 -> println("You are a baby")
+        in 1..17 -> println("You are a minor")
+        in 18..59 -> println("You are an adult")
+        else -> println("You are a senior citizen")
+    }
+    val gender = "Q"
+    when (gender) {
+        "M" -> println("MALE")
+        "F" -> println("FEMALE")
+        "L" -> println("LESBIAN")
+        "G" -> println("GAY")
+        "B" -> println("BISEXUAL")
+        "T" -> println("TRANSGENDER")
+        "Q" -> println("QUEER")
+        else -> println("Unknown")
+    }
+
+    // When booleans are null
+    val isMale1: Boolean? = null
+    if (isMale1 != null) {
+        println("not null and true")
+    }
+    else {
+        println("null")
+    }
+    when (isMale1) {
+        true -> println("Male")
+        false -> println("Female")
+        else -> println("Unknown")
+    }
+
+    // Arrays
+    val numbers = intArrayOf(1, 2, 3, 4, 5)
+    println(numbers[0]) //1
+    val strArray = arrayOf("Kotlin", "Java", "Python")
+    println(strArray[0]) //Kotlin
+    val mixedArray = arrayOf(1, "Kotlin", 3.0) // NB: the size of this array could not be resizable due to val, but its contents can be changed.
+    println(mixedArray[2]) //3.0
+    mixedArray[0] = 10
+    println(mixedArray.contentToString()) // [10, Kotlin, 3.0]
+    //println(mixedArray[3]) // throw a runtime exception: ArrayIndexOutOfBoundsException
+    if ("Kotlin" in mixedArray) {
+        println("Kotlin is in the mixedArray")
+    } else {
+        println("Kotlin is not in the mixedArray")
+    }
+    val arrayOfNulls = arrayOfNulls<String>(5)
+    println(arrayOfNulls.contentToString()) //[null, null, null, null, null]
+    arrayOfNulls[4] = "Kotlin"
+    println(arrayOfNulls.contentToString()) //[null, null, null, null, Kotlin]
+    arrayOfNulls.fill("*")
+    println(arrayOfNulls.contentToString()) //[*, *, *, *, *]
+    println(arrayOfNulls.flatMap {
+        it?.let {
+            listOf(it.length, it)
+        } ?: emptyList()
+    }) // [1, *, 1, *, 1, *, 1, *, 1, *]
+
+    // List
+    val list: List<String> = listOf("Kotlin", "Java", "Python") //NB: you cannot add or remove elements from this list
+    println(list[0]) //Kotlin
+    println(list.contains("Java")) //true
+    println(list.containsAll(listOf("Java", "Python"))) //true
+    val mutableList = mutableListOf(list.joinToString())   // NB: you can add or remove elements from this list
+    mutableList.add("C++")
+    println(mutableList) //[Kotlin, Java, Python, C++]
+    mutableList.addAll(listOf("C#", "Ruby"))
+    println(mutableList) //[Kotlin, Java, Python, C++, C#, Ruby]
 
     //1:20:27
 
