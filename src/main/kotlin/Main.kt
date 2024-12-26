@@ -57,7 +57,22 @@ fun main() {
     println(min(1,2))   //1
     println(round(sqrt(26.0)))
 
-    //
+    // + operator overloading
+    val x = 10
+    val y = 20
+    println(x + y) //30
+    println("10" + "20") //1020
+
+    // conversion
+    val num = "10"
+    println(10 + num.toInt()) //20  NB: println(10 + num) won't compile due to different types
+    println(10.toString() + num) //1010  NB: it is better to use String template, ie println("${10}${num}")
+    val d = 3.0
+    println(d.toInt()) //3
+    println(d.toLong()) //3
+    println(d.toFloat()) //3.0
+    println(d.toString()) //"3.0"
+    println(d.toString() is String) //true
 
 
 
