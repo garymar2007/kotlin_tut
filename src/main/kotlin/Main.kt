@@ -267,8 +267,21 @@ fun main() {
     greet("Gary", 20) //Hello
     greet("Yichong", 17)
     greet(age = 11, name="Yixuan")
-
     // default arguments
+    greet("Xiaoxiong")
+
+    // pass a function to another function
+    foo {
+        println("Hello from foo")
+    }
+    foo (bar = {
+        println("bar as a function")
+    })
+
+    // return value from a function
+    println(double(3)) //6
+
+
 
 
 
@@ -276,12 +289,26 @@ fun main() {
 
 }
 
-fun greet(name: String, age: Int) {
+fun double(x: Int): Int {
+    return x * 2
+}
+
+fun foo(bar: () -> Unit) {
+    println("bar function")
+    bar()
+}
+
+fun greet(name: String, age: Int = -1) {
     println("Hello 🙌 $name")
+    if (age == -1) {
+        println("You did not provide your age: $name")
+        return
+    }
+
     if (age >= 18) {
-        println("You are an adult")
+        println("$name: $age  - You are an adult")
     } else {
-        println("You are a minor")
+        println("$name: $age  - You are a minor")
     }
 }
 
