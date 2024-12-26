@@ -264,15 +264,25 @@ fun main() {
 //    }
 
     // Functions
-    greet("Gary") //Hello
+    greet("Gary", 20) //Hello
+    greet("Yichong", 17)
+    greet(age = 11, name="Yixuan")
+
+    // default arguments
+
 
 
     //3:07:49
 
 }
 
-fun greet(name: String) {
-    println("Hello $name")
+fun greet(name: String, age: Int) {
+    println("Hello 🙌 $name")
+    if (age >= 18) {
+        println("You are an adult")
+    } else {
+        println("You are a minor")
+    }
 }
 
 fun getConstPiValue(): Double = PI
