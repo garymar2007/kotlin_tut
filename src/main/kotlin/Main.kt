@@ -27,6 +27,27 @@ fun main() {
     val message = "$who loves $language"
     println(message)
 
+    // multiple lines string
+    val email = """
+        Hi %s,
+        You are learning %s
+    """.trimIndent()
+    println(email.format(who, language))
+
+    // compare strings
+    val str1 = "Kotlin"
+    val str2 = "Kotlin"
+    println(str1 == str2)
+
+    val str3 = java.lang.String("Kotlin")
+    println(str1.equals(str3))  //  "==" cannot be used here because str3 is a java String object.
+
+    val str4 = String("Kotlin".toCharArray())
+    println(str1 == str4)  //  "==" can be used here because str4 is a Kotlin String.
+    println(str4 === str1) //  "===" is used to compare memory reference of the objects.
+
+
+    //1:20:27
 
 }
 
