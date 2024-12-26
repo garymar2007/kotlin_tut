@@ -165,11 +165,15 @@ fun main() {
     println(list[0]) //Kotlin
     println(list.contains("Java")) //true
     println(list.containsAll(listOf("Java", "Python"))) //true
-    val mutableList = mutableListOf(list.joinToString())   // NB: you can add or remove elements from this list
+    val mutableList = mutableListOf("Kotlin", "Java", "Python")   // NB: you can add or remove elements from this list
     mutableList.add("C++")
     println(mutableList) //[Kotlin, Java, Python, C++]
     mutableList.addAll(listOf("C#", "Ruby"))
     println(mutableList) //[Kotlin, Java, Python, C++, C#, Ruby]
+    println(mutableList.indexOf("Java")) //1
+    val isRemovalSuccessful = mutableList.remove("Java")
+    println(isRemovalSuccessful) //true
+    println(mutableList) //[Kotlin, Python, C++, C#, Ruby]
 
     //1:20:27
 
