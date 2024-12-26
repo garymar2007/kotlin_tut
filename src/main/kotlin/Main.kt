@@ -74,7 +74,25 @@ fun main() {
     println(d.toString()) //"3.0"
     println(d.toString() is String) //true
 
+    // conditional statements
+    val isAdult = false
+    val isMale = true
+    if (isAdult && isMale) {
+        println("You are an adult Male")
+    } else if (isAdult && !isMale) {
+        println("You are an adult Female")
+    } else if (isMale){
+        println("You are a male but not an adult")
+    } else {
+        println("You are a female but not an adult")
+    }
 
+    //Ternary operator
+    // In Java, var result = n1 > n2 ? n1 : n2;
+    // In kotlin
+    val n1 = 31
+    val n2 = 20
+    val result = if (n1 > n2) n1 else n2
 
     //1:20:27
 
