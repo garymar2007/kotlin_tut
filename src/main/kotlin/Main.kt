@@ -240,9 +240,39 @@ fun main() {
         print(" ")
         number--
     } while (number >= 0)
+    println()
+
+    // Break and continue
+    val nums = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    for (n in nums) {
+        if (n % 2 == 0) {
+            continue
+        }
+        if (n == 7) {
+            break
+        }
+        print(n)
+        print(" ")
+    }
+    println()
+//    nums.forEach { // continue is NOT allowed in forEach.
+//        if (it % 2 == 0) {
+//            continue
+//        }
+//        print(it)
+//        print(" ")
+//    }
+
+    // Functions
+    greet("Gary") //Hello
+
 
     //3:07:49
 
+}
+
+fun greet(name: String) {
+    println("Hello $name")
 }
 
 fun getConstPiValue(): Double = PI
