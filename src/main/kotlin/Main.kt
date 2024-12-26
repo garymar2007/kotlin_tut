@@ -174,8 +174,52 @@ fun main() {
     val isRemovalSuccessful = mutableList.remove("Java")
     println(isRemovalSuccessful) //true
     println(mutableList) //[Kotlin, Python, C++, C#, Ruby]
+    val emptyList = mutableListOf<Any>()
+    println(emptyList.isEmpty()) //true
 
-    //1:20:27
+    // Destructure
+    val (name1, age1) = Pair("Gary", 20)
+    println("$name1 is $age1 years old") //Gary is 20 years old
+    val names = listOf("Gary", "John", "Jane", "Carol") // or arrayOf("Gary", "John", "Jane", "Carol")
+    val (name2, name3, name4) = names
+    println("$name2, $name3 and $name4 are friends") //Gary, John and Jane are friends
+    val (first, second, _, fourth) = names
+    println("$first, $second and $fourth are relatives") //Gary, John and Carol are friends
+    val (one, _, _, four) = names
+    println("$one and $four are couple") //Gary and Carol are friends
+
+    // loops
+    val numbers1 = intArrayOf(1, 2, 3, 4, 5)
+    val names1 = listOf("Gary", "John", "Jane", "Carol")
+    for (number in numbers1) {
+        print(number)
+        print(" ")
+    }
+    println()
+    for (name in names1) {
+        name.replaceFirstChar { it.uppercase() }
+        println(name)
+    }
+    val chars = charArrayOf('A', 'B', 'C', 'D', 'E')
+    for (index in chars.indices) {
+        println("$index - ${chars[index]}")
+    }
+    for (index in chars.indices.reversed()) {
+        println("$index - ${chars[index]}")
+    }
+    for (i in 1..5) {
+        print(i)
+        print(" ")
+    }
+    for (i in 5 downTo 1 step 2) { //5, 3, 1 step is to skip every second element
+        print(i)
+        print(" ")
+    }
+
+    //
+
+
+    //3:07:49
 
 }
 
